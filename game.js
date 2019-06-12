@@ -1,4 +1,3 @@
-
-import {Main} from './Mian.js'
+import {Main} from './Main.js'
 
 new Main()

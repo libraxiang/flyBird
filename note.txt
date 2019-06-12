@@ -50,3 +50,32 @@
   定义canvas标签
   简单设置样式
   引入了game.js入口文件
+
+2. 定义Main.js
+  export class Main{}
+  在其中定义构造方法constructor(){}
+  在game.js中引入
+  构造中获取canvas，模拟使用灿灿是画布背景
+
+3. 定义 Resources.js
+  定义资源数组，并将其导出
+  export const Resources = [];
+
+4. 定义Resources.js
+  export class ResourceLoader{}
+  在构造中定义map集合，获取Resources中的数据
+  遍历map，将其中字符串去不替换为img对象
+  定义onloaded方法，保证图片加载完成后再让Main来执行后续
+
+5. 变量的存取和销毁
+  定义DataStore.js
+  暴露DataStore类
+  定义构造方法
+  定义静态方法 static getInstance(){}
+  保证每个类获取到的变量池都是同一个变量池
+  定义保存、获取、销毁数据的方法
+
+  在Main中夹杂完成的方法前面获取变量池
+
+6. 数据的保存
+  将部分数据永久保存在变量池中(该部分数据不随游戏的结束而销毁)
