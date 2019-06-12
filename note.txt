@@ -22,7 +22,7 @@
 项目结构
 /---
   |-- index.html 页面，模拟手机的界面
-  |-- game.js 小游戏的路口文件
+  |-- game.js 小游戏的入口文件
   |-- game.json 小游戏的配置文件(不需要修改)
   |-- project.config.json 项目配置文件(不需要修改)
   |-- main.js 游戏的主类：主要用于初始化canvas以及一些全局对象
@@ -45,3 +45,8 @@
       |-- Pipe.js 水管的父类
       |-- UpPipe.js上部水管
       |-- DownPipe.js 下部水管
+
+1. index.html
+  定义canvas标签
+  简单设置样式
+  引入了game.js入口文件
