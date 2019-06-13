@@ -1,4 +1,4 @@
-import { DataStore } from "./DataSore.js";
+import { DataStore } from "./DataStore.js/index.js";
 
 // 所有图片的父类
 

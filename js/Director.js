@@ -1,4 +1,4 @@
-import { DataStore } from "./base/DataSore.js";
+import { DataStore } from "./base/DataStore.js/index.js";
 
 // 导演类，控制游戏的逻辑，主流程
 
@@ -22,7 +22,8 @@ export class Director{
   run(){
     // 获取背景图
     console.log(31)
-    this.dataStore.get('background').draw()
+    this.dataStore.get('background').draw();
+    this.dataStore.get('land').draw();
   }
 
 }
