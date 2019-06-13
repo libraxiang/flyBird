@@ -1,6 +1,7 @@
 import { ResourceLoader } from "./js/base/ResourceLoader.js";
 import { DataStore } from "./js/base/DataSore.js";
 import { Background } from "./js/runtime/Background.js";
+import { Director } from "./js/Director.js";
 
 // 程序主类
 export class Main{
@@ -15,6 +16,9 @@ export class Main{
 
     // 获取变量池
     this.dataStore = DataStore.getInstance();
+
+    // 获取导演类
+    this.director = Director.getInstance();
     
     // 调用ResourceLoader的onloaded方法，获取已经加载成功的图片    
     this.loader.onloaded(map=>this.onResourceLoaded(map));
@@ -40,6 +44,13 @@ export class Main{
   }
   // 游戏数据的初始化
   init(){
-    new Background().draw();
+    // 创建游戏过程中使用到的对象，并将其put进变量池
+    // 使用put保存的数据，在游戏结束时会全部销毁
+    this.dataStore.put('background',new Background())
+
+
+
+    // 导演发布执行
+    this.director.run();
   }
 }
