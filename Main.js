@@ -1,5 +1,5 @@
 import { ResourceLoader } from "./js/base/ResourceLoader.js";
-import { DataStore } from "./js/base/DataStore.js/index.js";
+import { DataStore } from "./js/base/DataStore.js";
 import { Background } from "./js/runtime/Background.js";
 import { Director } from "./js/Director.js";
 import { land } from "./js/runtime/Land.js";

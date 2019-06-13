@@ -1,5 +1,5 @@
 import { Sprite } from "../base/Sprite.js";
-import { DataStore } from "../base/DataStore.js/index.js";
+import { DataStore } from "../base/DataStore.js";
 
 // 背景图
 /**

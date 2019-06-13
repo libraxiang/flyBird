@@ -13,4 +13,8 @@ export class land extends Sprite{
     const y = height - img.height;
     super(img,0,0,img.width,img.height,0,y,img.width,img.height)
   }
+
+  draw(){
+    
+  }
 }

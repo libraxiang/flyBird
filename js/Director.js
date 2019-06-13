@@ -1,4 +1,4 @@
-import { DataStore } from "./base/DataStore.js/index.js";
+import { DataStore } from "./base/DataStore.js";
 
 // 导演类，控制游戏的逻辑，主流程
 
