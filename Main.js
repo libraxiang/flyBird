@@ -3,6 +3,8 @@ import { DataStore } from "./js/base/DataStore.js";
 import { Background } from "./js/runtime/Background.js";
 import { Director } from "./js/Director.js";
 import { land } from "./js/runtime/Land.js";
+import { UpPipe } from "./js/runtime/UpPipe.js";
+import { DownPipe } from "./js/runtime/DownPipe.js";
 
 // 程序主类
 export class Main{
@@ -49,6 +51,8 @@ export class Main{
     // 使用put保存的数据，在游戏结束时会全部销毁
     this.dataStore.put('background',new Background())
                   .put('land',new land())
+                  .put('pipe',new UpPipe(400))
+                  .put('down',new DownPipe(400))
 
 
 

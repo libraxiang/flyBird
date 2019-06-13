@@ -23,6 +23,8 @@ export class Director{
     // 获取背景图
     this.dataStore.get('background').draw();
     this.dataStore.get('land').draw();
+    this.dataStore.get('pipe').draw();
+    this.dataStore.get('down').draw();
 
     // 定时器，让定时器不停的运转
     // setTimeout(() => this.run(),30);
