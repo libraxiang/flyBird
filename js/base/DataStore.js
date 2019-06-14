@@ -1,7 +1,6 @@
 // 变量池
 export class DataStore{
   constructor(){
-    console.log("变量池");
     this.map = new Map();
 
   }
@@ -29,6 +28,7 @@ export class DataStore{
   destroy(){
     for(let v of this.map.values()){
       v = null;
+      // console.log(v);
     }
   }
 }

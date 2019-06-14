@@ -4,5 +4,5 @@ export const Resources = [
   ['land','res/land.png'],
   ['pieDown','res/pie_down.png'],
   ['pieUp','res/pie_up.png'],
-  ['start_button','res/start_button.png']
+  ['startButton','res/start_button.png']
 ]

@@ -4,6 +4,8 @@ import { Background } from "./js/runtime/Background.js";
 import { Director } from "./js/Director.js";
 import { land } from "./js/runtime/Land.js";
 import { Birds } from "./js/player/Birds.js";
+import { StartButton } from "./js/player/StartButton.js";
+import { Score } from "./js/player/Score.js";
 
 // 程序主类
 export class Main{
@@ -46,17 +48,39 @@ export class Main{
   }
   // 游戏数据的初始化
   init(){
+
+    this.director.isGameOver = false;
     // 创建游戏过程中使用到的对象，并将其put进变量池
     // 使用put保存的数据，在游戏结束时会全部销毁
     this.dataStore.put('background',new Background())
                   .put('land',new land())
                   .put('pipes',[])
                   .put('birds',new Birds())
+                  .put('startButton',new StartButton())
+                  .put('score',new Score())
 
     // 创建水管
-    this.director.createPipes()
+    this.director.createPipes();
+
+    // 调用监听事件
+    this.registEvent();
 
     // 导演发布执行
     this.director.run();
+
+  }
+  // 添加屏幕单击事件
+  registEvent(){
+    this.canvas.addEventListener('touchstart',e => {
+      // console.log(this);
+      // 判断游戏是否结束
+      if(this.director.isGameOver){
+        // 如果游戏技术,点击重新开始
+        this.init();        
+      }else{        
+        //如果正在运行，点击小鸟往上飞一段距离/
+        this.director.birdsEvent();
+      }
+    });
   }
 }
