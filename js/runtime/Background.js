@@ -9,7 +9,7 @@ import { DataStore } from "../base/DataStore.js";
 export class Background extends Sprite{
   constructor(){
     const img = Sprite.getImage('background');
-    console.log(img);
+    // console.log(img);
     // 获取canvas的宽高
     const width  = DataStore.getInstance().canvas.width;
     const height  = DataStore.getInstance().canvas.height;

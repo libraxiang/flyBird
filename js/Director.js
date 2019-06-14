@@ -40,7 +40,7 @@ export class Director{
     // 单击时，将小鸟自由落体的事件重置为0
     // let dataStore = this.dataStore.get('birds')
     // this.dataStore.get('birds').y -= 50;
-    this.dataStore.get('birds').time = 0;
+    this.dataStore.get('birds').time = 5;
   }
 
   // 判断小鸟与某一个水管是否撞击
@@ -152,6 +152,14 @@ export class Director{
   }else{
     // 游戏结束，不需要渲染
     cancelAnimationFrame(this.time);
+    this.dataStore.get('background').draw();
+    const pipes = this.dataStore.get('pipes');
+    for (let i = 0;i < pipes.length;i++){
+      pipes[i].draw();
+    }
+    this.dataStore.get('land').draw();
+    this.dataStore.get('birds').draw();
+    this.dataStore.get('score').draw();
     // 画重新开始的箭头
     this.dataStore.get('startButton').draw();
     // 清空变量池中的数据（通过put保存的数据）

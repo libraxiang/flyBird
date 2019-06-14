@@ -17,7 +17,6 @@ export class Birds extends Sprite{
     const canvas = dataStore.canvas;
     this.x = canvas.width / 6; // 绘制在canvas的X坐标
     const land = dataStore.res.get('land').height //  地板的高度
-    console.log(land);
     this.y = (canvas.height - land)/2; // 绘制在canvas上的y坐标
 
     this.count = 0; // 计数器
@@ -34,7 +33,7 @@ export class Birds extends Sprite{
 
     // 模拟自由落体运动
     this.time++;
-    const g = 0.098/6;
+    const g = 0.098/4;
     const up = 30;
     let drop = g*(this.time)*(this.time - up) /2; // 掉落的距离
     this.y = this.y + drop;

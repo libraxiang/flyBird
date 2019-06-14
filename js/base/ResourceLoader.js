@@ -8,7 +8,8 @@ export class  ResourceLoader {
     // console.log(this.map);
     // 遍历map，将其中的字符串路径替换为img对象
     for (let[k,v] of this.map){
-      const img = new Image();
+      // const img = new Image();
+      const img = wx.createImage();
       img.src = v;
       // 将图片替换原来的字符串
       // map.set(key,value) 设置map的key-value值

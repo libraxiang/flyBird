@@ -28,7 +28,6 @@ export class DataStore{
   destroy(){
     for(let v of this.map.values()){
       v = null;
-      // console.log(v);
     }
   }
 }
