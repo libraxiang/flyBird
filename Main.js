@@ -6,6 +6,7 @@ import { land } from "./js/runtime/Land.js";
 import { Birds } from "./js/player/Birds.js";
 import { StartButton } from "./js/player/StartButton.js";
 import { Score } from "./js/player/Score.js";
+import { WxAPI } from "./WxAPI.js"
 
 // 程序主类
 export class Main{
@@ -25,8 +26,11 @@ export class Main{
     // 获取导演类
     this.director = Director.getInstance();
 
-    // this.ctx.fillStyle = "#FFF";
-    // this.ctx.fillText('sdasd',100,100);
+    // 获取微信api
+    this.wxapi = new WxAPI();
+
+    this.ctx.fillStyle = "#FFF";
+    this.ctx.fillText('sdasd',100,100);
     
     // 调用ResourceLoader的onloaded方法，获取已经加载成功的图片   
 
@@ -49,7 +53,12 @@ export class Main{
     this.dataStore.ctx = this.ctx;
     this.dataStore.res = map;
 
-    this.init();
+    //获取登录用户信息
+    this.wxapi.getUserInfo(() => {
+      this.init();
+    });
+
+    // this.init();
   }
   // 游戏数据的初始化
   init(){
@@ -72,6 +81,17 @@ export class Main{
 
     // 导演发布执行
     this.director.run();
+
+    /* // 播放音乐
+    this.wxapi.playMusic();
+    // 获取手机信息
+    this.wxapi.getSysInfo();
+    // 发送HTTP请求
+    this.wxapi.sendHttp(); */
+    // 发送socket请求
+    this.wxapi.socket();
+    // 下载文件
+    this.wxapi.downLoad();
 
   }
   // 添加屏幕单击事件

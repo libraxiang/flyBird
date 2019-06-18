@@ -140,9 +140,9 @@ export class Director{
     }
     
     // 画小鸟
+    this.dataStore.get('land').draw();
     this.dataStore.get('birds').draw();
     this.dataStore.get('score').draw();
-    this.dataStore.get('land').draw();
 
     // 定时器，让定时器不停的运转
     // setTimeout(() => this.run(),30);
@@ -160,6 +160,16 @@ export class Director{
     this.dataStore.get('land').draw();
     this.dataStore.get('birds').draw();
     this.dataStore.get('score').draw();
+    // 游戏结束，手机震动一下
+    wx.vibrateLong({
+      /* success:function(){
+        console.log("震动了一次")
+      } */
+      success(){
+        console.log("震动了一次");
+      }
+    })
+
     // 画重新开始的箭头
     this.dataStore.get('startButton').draw();
     // 清空变量池中的数据（通过put保存的数据）
